@@ -9,7 +9,6 @@ test('renders a number input with a label "Favorite number"', () => {
 	expect(input).toHaveAttribute('type', 'number'); //same as above
 	debug(input);
 });
-// ch7
 test('enter an invalid number shows an error message', () => {
 	const { getByLabelText, getByRole, rerender, queryByRole } = render(<FavoriteNumber />);
 	const input = getByLabelText(/favorite number/i);
@@ -19,3 +18,4 @@ test('enter an invalid number shows an error message', () => {
 	// expect(getByRole('alert')).toBeNull(); //any getBy... command throws an error if it can't find an element that is supposed to be matching
 	expect(queryByRole('alert')).toBeNull(); //queryByRole returns null instead of throwing an error
 });
+//ch 11
