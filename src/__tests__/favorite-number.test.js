@@ -8,3 +8,4 @@ test('renders a number input with a label "Favorite number"', () => {
 	expect(input).toHaveAttribute('type', 'number'); //same as above
 	debug(input);
 });
+// ch7
