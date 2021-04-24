@@ -11,11 +11,11 @@ test('renders a number input with a label "Favorite number"', () => {
 });
 // ch7
 test('enter an invalid number shows an error message', () => {
-	const { getByLabelText, getByRole, rerender, debug } = render(<FavoriteNumber />);
+	const { getByLabelText, getByRole, rerender, queryByRole } = render(<FavoriteNumber />);
 	const input = getByLabelText(/favorite number/i);
 	user.type(input, '10');
 	expect(getByRole('alert')).toHaveTextContent(/the number is invalid/i); //get this: <div role="alert">The number is invalid</div>
-	debug();
 	rerender(<FavoriteNumber max={10} />); //rerender the same component with different props to test other values
-	debug();
+	// expect(getByRole('alert')).toBeNull(); //any getBy... command throws an error if it can't find an element that is supposed to be matching
+	expect(queryByRole('alert')).toBeNull(); //queryByRole returns null instead of throwing an error
 });
