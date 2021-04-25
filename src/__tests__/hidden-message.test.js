@@ -19,4 +19,3 @@ test('show hidden message when toggle is clicked', () => {
 	fireEvent.click(toggleButton);
 	expect(queryByText(myMessage)).not.toBeInTheDocument();
 });
-//ch 14
